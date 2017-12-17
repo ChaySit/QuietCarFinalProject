@@ -17,15 +17,24 @@ public class MainServlet extends HttpServlet {
 	@EJB
 	private Facade facade;
 	
+	/* 
+	 * Fonction qui permet d'ajouter un nouveau utilisateur dans la base 
+	 */
 	private void signUpUtilisateur(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Récupération du mot de passe et de sa confirmation du formulaire d'inscription
 		String password = (String) request.getParameter("password");
 		String confirm_password = (String) request.getParameter("confirmPassword");
+		// Si le mot de passe est sa confirmation sont égaux
 		if (password.equals(confirm_password)) {
+			// Récupération de la valeur du login du formulaire d'inscription
 			String login = (String) request.getParameter("login");
+			// Appel à la fonction de création d'un nouveau utilisateur de l'EJB
 			facade.ajouterUtilisateur(login, password);
+			// Redirection vers la jsp test pour confirmer la création 
 			request.getRequestDispatcher("WEB-INF/test.jsp").forward(request, response);
 		}
 		else {
+			// Si le mot de passe et sa confirmation ne sont pas égaux; affichage d'un message sur la console et on reste sur la page index.html
 			System.out.println("Les mots de passe entrés ne sont pas les mêmes !!");
 			request.getRequestDispatcher("WEB-INF/index.html").forward(request, response);
 		}	
