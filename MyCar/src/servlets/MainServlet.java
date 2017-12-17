@@ -36,7 +36,7 @@ public class MainServlet extends HttpServlet {
 		else {
 			// Si le mot de passe et sa confirmation ne sont pas égaux; affichage d'un message sur la console et on reste sur la page index.html
 			System.out.println("Les mots de passe entrés ne sont pas les mêmes !!");
-			request.getRequestDispatcher("WEB-INF/index.html").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		}	
     }
     
@@ -56,21 +56,18 @@ public class MainServlet extends HttpServlet {
 					if(facade.utilisateurValide(login, password)) {
 						request.getSession().setAttribute("login", login);
 						//Renvoi vers la page d'accueil 
-						request.getRequestDispatcher("/WEB-INF/index.html").forward(request, response);
+						request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 					}
 					break;
 				case "signUp" :
 					this.signUpUtilisateur(request, response);
 					break;
-				case "home" :
-					request.getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
-					break;
 				default:
-					request.getRequestDispatcher("/WEB-INF/index.html").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 					break;	
 			}
 		}
-		request.getRequestDispatcher("/WEB-INF/index.html").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		return;
 			
 			

@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<!-- Basic Page Needs -->
     <meta charset="utf-8">
     <title>Quiet car</title>
@@ -39,18 +38,19 @@
      <![endif]-->
 </head>
 <body>
+
 <div class="modal-dialog">
                 <div class="modal-content">
 
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div><!-- end .modal-header -->
+                    </div>
 
                     <div class="modal-body">
-                        <form action="" novalidate autocomplete="off" class="idealforms login">
+                        <form action="" novalidate autocomplete="off" class="idealforms reg">
 
                             <div class="log-header">
-                                <span class="log-in">Connexion</span>
+                                <span class="log-in">Inscription</span>
                             </div>
 
                             <div class="field">
@@ -63,16 +63,22 @@
                                 <span class="error"></span>
                             </div>
 
+                            <div class="field">
+                                <input name="confirmPassword" type="password"  placeholder="Confirmer votre mot de passe">
+                                <span class="error"></span>
+                            </div>
+
                             <div class="field buttons">
-                                <button type="submit" class="submit btn green-color" name="todo" value="connect">Connexion</button>
+                                <button type="submit" class="submit btn green-color" name="todo" value="signUp">Inscription</button>
                             </div>
 
                             <div class="clearfix"></div>
 
-                        </form><!-- end .login -->
+                        </form><!-- end .reg -->
                     </div><!-- end .modal-body -->
 
                 </div><!-- end .modal-content -->
             </div><!-- end .modal-dialog -->
+
 </body>
 </html>
