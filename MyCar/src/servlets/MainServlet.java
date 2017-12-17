@@ -62,6 +62,9 @@ public class MainServlet extends HttpServlet {
 				case "signUp" :
 					this.signUpUtilisateur(request, response);
 					break;
+				case "home" :
+					request.getRequestDispatcher("/WEB-INF/test.jsp").forward(request, response);
+					break;
 				default:
 					request.getRequestDispatcher("/WEB-INF/index.html").forward(request, response);
 					break;	
