@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ejbs.Facade;
+import entities.Offre;
 
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
@@ -31,12 +33,31 @@ public class MainServlet extends HttpServlet {
 			// Appel à la fonction de création d'un nouveau utilisateur de l'EJB
 			facade.ajouterUtilisateur(login, password);
 			// Redirection vers la jsp test pour confirmer la création 
-			request.getRequestDispatcher("WEB-INF/test.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/authentification.jsp").forward(request, response);
 		}
 		else {
 			// Si le mot de passe et sa confirmation ne sont pas égaux; affichage d'un message sur la console et on reste sur la page index.html
 			System.out.println("Les mots de passe entrés ne sont pas les mêmes !!");
 			request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+		}	
+    }
+	
+	/* 
+	 * Fonction qui permet de rechercher un trajet dans la base 
+	 */
+	private void rechercherTrajet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String villeDeDepart = (String) request.getParameter("villeDepart");
+		String villeArrivee = (String) request.getParameter("villeDestination");
+		String date = (String) request.getParameter("date");
+		String nbrePlaces = (String) request.getParameter("nbrePlaces");
+		
+		if (villeDeDepart != null && villeArrivee != null && date != null && nbrePlaces != null) {
+			request.setAttribute("listeDesTrajet", facade.rechercherTrajet(villeDeDepart, villeArrivee, date, nbrePlaces));
+			request.getRequestDispatcher("WEB-INF/test.jsp").forward(request, response);
+		}
+		else {
+			System.out.println("Tous les champs de recherche doivent être renseignés !!");
+			request.getRequestDispatcher("/WEB-INF/rides.jsp").forward(request, response);
 		}	
     }
     
@@ -61,6 +82,12 @@ public class MainServlet extends HttpServlet {
 					break;
 				case "signUp" :
 					this.signUpUtilisateur(request, response);
+					break;
+				case "rechercher" :
+					request.getRequestDispatcher("/WEB-INF/rides.jsp").forward(request, response);
+					break;
+				case "submitRecherche" :
+					this.rechercherTrajet(request, response);
 					break;
 				default:
 					request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);

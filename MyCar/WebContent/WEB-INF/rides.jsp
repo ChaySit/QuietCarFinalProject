@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<!-- Basic Page Needs -->
+<html class="not-ie no-js" lang="en">  
+    <head>
+
+        <!-- Basic Page Needs -->
         <meta charset="utf-8">
-        <title>Quiet car</title>
+        <title>Recherche trajet</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,16 +40,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-	</head>
-	<body>
-	<header class="header">
 
+    </head>
+
+    <body>
+
+        <header class="header">
             <div class="top-menu">
-
                 <section class="container">
                     <div class="row">
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="user-log">
 
                                 <a data-toggle="modal" data-target="#loginModal">
@@ -60,8 +59,6 @@
                                 </a>
 
                             </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-
                     </div><!-- end .row -->
                 </section><!-- end .container -->
 
@@ -69,7 +66,7 @@
 
             <div class="main-baner">
 
-                <div class="fullscreen background parallax clearfix" style="background-image:url('img/road-trip.jpg');" data-img-width="1600" data-img-height="1064">
+                <div class="background parallax clearfix" style="background-image:url('img/road-trip.jpg');" data-img-width="1600" data-img-height="1064">
 
                     <div class="main-parallax-content">
 
@@ -84,7 +81,7 @@
                                         <div class="col-md-4 col-sm-12 col-xs-12">
 
                                             <div class="logo">
-                                                <h1>QuietCar</h1>
+                                                <h1> QuietCar </h1>
                                             </div><!-- end .logo -->
 
                                         </div><!-- end .col-sm-4 -->
@@ -95,19 +92,18 @@
 
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href=href="http://localhost:8085/MyCar/MainServlet">Accueil</a>
+                                                        <a href=href="http://localhost:8085/MyCar/MainServlet">Acuueil</a>
                                                     </li>
                                                     <li>
-                                                        <a href="http://localhost:8085/MyCar/MainServlet?todo=rechercher" >Rechercher un trajet</a>
+                                                        <a href="http://localhost:8085/MyCar/MainServlet?todo=rechercher">Rechercher un trajet</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.html">Ajouter un trajet</a>
+                                                        <a href="add-ride.html">Proposer un trajet</a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact-page.html">Contact</a>
+                                                        <a href="add-ride.html">Contact</a>
                                                     </li>
                                                 </ul>
-
                                             </nav><!-- end .main-navigation -->
 
                                         </div><!-- end .col-md-8 -->
@@ -117,6 +113,77 @@
                                 </div><!-- end .row -->
 
                             </section><!-- end .container -->
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                <div class="search-content">
+
+                                    <form action="" novalidate autocomplete="off" class="idealforms searchtours">
+
+                                        <div class="row">
+
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="field">
+                                                    <select id="destination" name="villeDepart">
+                                                        <option value="default">De</option>
+                                                        <option>Bourges</option>
+                                                        <option>Paris</option>
+                                                        <option>Lyon</option>
+                                                        <option>Rennes</option>
+                                                        <option>Nantes</option>
+                                                        <option>Blois</option>
+                                                        <option>Toulouse</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+
+                                                <div class="field">
+                                                    <select id="destination" name="villeDestination">
+                                                        <option value="default">A</option>
+                                                        <option>Bourges</option>
+                                                        <option>Paris</option>
+                                                        <option>Lyon</option>
+                                                        <option>Rennes</option>
+                                                        <option>Nantes</option>
+                                                        <option>Blois</option>
+                                                        <option>Toulouse</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="field">
+                                                    <input name="date" type="text" placeholder="Date" class="datepicker">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="field">
+                                                    <select id="destination" name="nbrePlaces">
+                                                        <option value="default">Nbre de places</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                                <div class="field buttons">
+                                                    <button type="submit" class="btn btn-lg green-color" name="todo" value="submitRecherche">Chercher</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </form>
+                                </div><!-- end .search-content -->
+
+                            </div><!-- end .col-sm-12 -->
 
                         </div><!-- end .second-parallax-content -->
 
@@ -145,7 +212,7 @@
         <!-- Form -->
         <script type="text/javascript" src="js/jquery.idealforms.min.js"></script>
         <script type="text/javascript" src="js/jquery.idealselect.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
         <!-- Menu -->
         <script type="text/javascript" src="js/hoverIntent.js"></script>
         <script type="text/javascript" src="js/superfish.js"></script>
@@ -156,7 +223,6 @@
         <script type="text/javascript" src="js/bootstrap-rating-input.min.js"></script>
         <!-- Slicknav  -->
         <script type="text/javascript" src="js/jquery.slicknav.min.js"></script>
-	
 
-	</body>
+    </body>
 </html>

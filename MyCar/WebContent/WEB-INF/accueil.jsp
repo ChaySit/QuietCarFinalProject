@@ -90,10 +90,10 @@
 
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href="">Accueil</a>
+                                                        <a href=href="http://localhost:8085/MyCar/MainServlet">Accueil</a>
                                                     </li>
                                                     <li>
-                                                        <a href="" name="todo" value="home">Rechercher un trajet</a>
+                                                        <a href="http://localhost:8085/MyCar/MainServlet?todo=rechercher" >Rechercher un trajet</a>
                                                     </li>
                                                     <li>
                                                         <a href="add-ride.html">Ajouter un trajet</a>
