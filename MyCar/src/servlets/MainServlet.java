@@ -53,7 +53,7 @@ public class MainServlet extends HttpServlet {
 		
 		if (villeDeDepart != null && villeArrivee != null && date != null && nbrePlaces != null) {
 			request.setAttribute("listeDesTrajet", facade.rechercherTrajet(villeDeDepart, villeArrivee, date, nbrePlaces));
-			request.getRequestDispatcher("WEB-INF/test.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/offres.jsp").forward(request, response);
 		}
 		else {
 			System.out.println("Tous les champs de recherche doivent être renseignés !!");
