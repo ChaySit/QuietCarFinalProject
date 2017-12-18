@@ -63,11 +63,11 @@ public class MainServlet extends HttpServlet {
 					this.signUpUtilisateur(request, response);
 					break;
 				default:
-					request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 					break;	
 			}
 		}
-		request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 		return;
 			
 			

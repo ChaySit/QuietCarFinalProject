@@ -52,7 +52,12 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="user-log">
 
-                                <h2>Bonjour ${login}</h2>
+                                <a data-toggle="modal" data-target="#loginModal">
+                                    Connexion
+                                </a> /
+                                <a data-toggle="modal" data-target="#regModal">
+                                    Inscription
+                                </a>
 
                             </div><!-- end .user-log -->
                         </div><!-- end .col-sm-4 -->
@@ -122,6 +127,14 @@
             </div><!-- end .main-baner -->
 
         </header><!-- end .header -->
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <%@include file="authentification.jsp" %>
+        </div><!-- end .modal -->
+
+        <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <%@include file="inscription.jsp" %>
+        </div><!-- end .modal -->
 
         <!-- Javascript -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
