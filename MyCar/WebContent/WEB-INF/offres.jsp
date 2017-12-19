@@ -44,27 +44,8 @@
     </head>
 
     <body>
-
         <header class="header">
-
-            <div class="top-menu">
-
-                <section class="container">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="user-log">
-                                <a data-toggle="modal" data-target="#loginModal">
-                                    Connexion
-                                </a> /
-                                <a data-toggle="modal" data-target="#regModal">
-                                    Inscription
-                                </a>
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-                    </div><!-- end .row -->
-                </section><!-- end .container -->
-
-            </div><!-- end .top-menu -->
+			<%@include file="top_menu.jsp" %>
 
             <div class="main-baner">
 
@@ -127,15 +108,15 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-md-8 col-sm-8 col-xs-12">
+                   <div class="col-md-8 col-sm-8 col-xs-12">
 
-                        <div class="page-content">
+                     <div class="page-content">
                       <c:if test= "${listeDesTrajet.size() != 0}"> 
 						<c:forEach items="${listeDesTrajet}" var="off">
                             <article class="single-article">
 
                                 <header class="single-article-title">
-                                    <h2>Ce trajet est prposé par ${off.conducteur.login}</h2>
+                                    <h2>Ce trajet est prposé par ${off.conducteur.prenom} ${off.conducteur.nom}</h2>
                                     <span><a href="#">(${off.depart} - ${off.arrivee})</a></span>
                                 </header>
 
@@ -149,7 +130,7 @@
                                     <li class="article-people">
                                         <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
                                             <i class="fa fa-user"></i>
-                                            test
+                                            ${off.nombrePlace}
                                         </a>
                                     </li><!-- end .article-people -->
                                     <li>
@@ -161,19 +142,20 @@
                                     <li>
                                         <a href="#" class="tooltip-link" data-original-title="Number" data-toggle="tooltip">
                                             <i class="fa fa-mobile"></i>
-                                            088 - 888 - 888
+                                            ${off.conducteur.telephone}
                                         </a>
                                     </li>
                                     <li>
                                         <a>
                                             <i class="fa fa-envelope"></i>
-                                            Private Massage
+                                            ${off.conducteur.mail}
                                         </a>
                                     </li>
                                 </ul><!-- end .article-meta -->
 
                                  <div class="article-content">
                                      Ici on peut ajouter un message posté par le conducteur pour expliquer ce qu'il veut ...
+                                     ${off.message}
                                  </div>
                                  <BR>
                                  <div class="field buttons">

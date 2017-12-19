@@ -46,23 +46,7 @@
 
         <header class="header">
 
-            <div class="top-menu">
-
-                <section class="container">
-                   <div class="row">
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="user-log">
-
-                                <h2>Bonjour ${login}</h2>
-
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-
-                  </div><!-- end .row -->
-                </section><!-- end .container -->
-
-            </div><!-- end .top-menu -->
+            <%@include file="top_menu.jsp" %>
 
             <div class="main-baner">
 
@@ -175,15 +159,12 @@
                                         <option>Toulouse</option>
                                     </select>
                                 </div>
-
                                 <div class="field">
                                     <input name="date" type="text" placeholder="Date" class="datepicker">
-                                </div>
-                                
-                               <!-- div class="field">
-                                    <input name="time" type="text" placeholder="time" class="timepicker">
-                                </div> -->
-
+                                </div>                          
+                                <div class="field">
+                                    <input name="heure" type="text" placeholder="Heure de départ">
+                                </div> 
                                 <div class="field">
                                     <select id="destination" name="nbr">
                                         <option value="default">Nombre de places proposé</option>
@@ -192,7 +173,6 @@
                                         <option>3</option>
                                     </select>
                                 </div>
-                                
                                  <div class="field">
                                     <select id="destination" name="vehicule">
                                         <option value="default">Type de véhicule</option>
@@ -203,6 +183,9 @@
                                         <option>routière</option>
                                         <option>fourgonnette</option>
                                     </select>
+                                </div>
+                                 <div class="field">
+                                    <input name="message" type="text" placeholder="Message">
                                 </div>
 
                                 <div class="field buttons">

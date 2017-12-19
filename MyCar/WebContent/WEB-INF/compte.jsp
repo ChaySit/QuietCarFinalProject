@@ -2,11 +2,9 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
-<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
-    <head>
+<html class="not-ie no-js" lang="en">
 
+    <head>
         <!-- Basic Page Needs -->
         <meta charset="utf-8">
         <title>My ride - Rides</title>
@@ -49,24 +47,8 @@
     <body>
 
         <header class="header">
-
-            <div class="top-menu">
-
-                <section class="container">
-                    <div class="row">
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="user-log">
-
-                                <h2>Bonjour ${login}</h2>
-
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-
-                    </div><!-- end .row -->
-                </section><!-- end .container -->
-
-            </div><!-- end .top-menu -->
+        
+			<%@include file="top_menu.jsp" %>
 
             <div class="main-baner">
 

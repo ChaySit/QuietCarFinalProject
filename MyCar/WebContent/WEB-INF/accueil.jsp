@@ -44,23 +44,7 @@
 	<body>
 	<header class="header">
 
-            <div class="top-menu">
-
-                <section class="container">
-                    <div class="row">
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="user-log">
-
-                                <h2>Bonjour ${login}</h2>
-
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-
-                    </div><!-- end .row -->
-                </section><!-- end .container -->
-
-            </div><!-- end .top-menu -->
+            <%@include file="top_menu.jsp" %>
 
             <div class="main-baner">
 

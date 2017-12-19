@@ -22,6 +22,8 @@ Vehicule : <input type="text" name="vehicule" />
 <br/>
 Nombre des places proposées : <input type="number" name="vehicule" />
 <br/>
+Message visible par les visiteurs : <input type="number" name="message" />
+<br/>
 <br/>
 <button type="submit" name="todo" value="publier"> Publier </button>
 

@@ -44,28 +44,7 @@
 	<body>
 	<header class="header">
 
-            <div class="top-menu">
-
-                <section class="container">
-                    <div class="row">
-
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="user-log">
-
-                                <a data-toggle="modal" data-target="#loginModal">
-                                    Connexion
-                                </a> /
-                                <a data-toggle="modal" data-target="#regModal">
-                                    Inscription
-                                </a>
-
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-
-                    </div><!-- end .row -->
-                </section><!-- end .container -->
-
-            </div><!-- end .top-menu -->
+            <%@include file="top_menu.jsp" %>
 
             <div class="main-baner">
 
