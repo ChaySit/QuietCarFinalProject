@@ -130,51 +130,46 @@
                     <div class="col-md-8 col-sm-8 col-xs-12">
 
                         <div class="page-content">
+                      <c:if test= "${listeDesTrajet.size() != 0}"> 
 						<c:forEach items="${listeDesTrajet}" var="off">
                             <article class="single-article">
 
                                 <header class="single-article-title">
-                                    <h2>De ${off.depart} à ${off.arrivee}</h2>
-                                    <span>Ce trajet est proposé par : <a href="#">${off.conducteur.login}</a></span>
+                                    <h2>Ce trajet est prposé par ${off.conducteur.login}</h2>
+                                    <span><a href="#">(${off.depart} - ${off.arrivee})</a></span>
                                 </header>
 
                                 <ul class="article-meta">
-
                                     <li class="article-date">
                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
                                             <i class="fa fa-calendar"></i>
                                             Le ${off.date}
                                         </a>
                                     </li><!-- end .article-date -->
-
                                     <li class="article-people">
                                         <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
                                             <i class="fa fa-user"></i>
                                             test
                                         </a>
                                     </li><!-- end .article-people -->
-
                                     <li>
                                         <a href="#" class="tooltip-link" data-original-title="Car" data-toggle="tooltip">
                                             <i class="fa fa-car"></i>
                                             ${off.vehicule}
                                         </a>
                                     </li>
-
                                     <li>
                                         <a href="#" class="tooltip-link" data-original-title="Number" data-toggle="tooltip">
                                             <i class="fa fa-mobile"></i>
                                             088 - 888 - 888
                                         </a>
                                     </li>
-
                                     <li>
                                         <a>
                                             <i class="fa fa-envelope"></i>
                                             Private Massage
                                         </a>
                                     </li>
-                                    
                                 </ul><!-- end .article-meta -->
 
                                  <div class="article-content">
@@ -187,6 +182,8 @@
                             	<BR>
                             </article>
                             </c:forEach>
+                          </c:if>
+                          <p > Aucun trajet ne correspont à votre recherche :( </p>
                         </div><!-- end .page-content -->
 
                     </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
