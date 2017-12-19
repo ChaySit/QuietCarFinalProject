@@ -57,12 +57,40 @@
                                 <input name="login" type="text" placeholder="Login">
                                 <span class="error"></span>
                             </div>
-
+                            
+                            <div class="field">
+                                <input name="nom" type="text" placeholder="Nom">
+                                <span class="error"></span>
+                            </div>
+                            
+                            <div class="field">
+                                <input name="prenom" type="text" placeholder="Prenom">
+                                <span class="error"></span>
+                            </div>
+                            
+                            <div class="field">
+                                <input name="login" type="text" placeholder="E-mail">
+                                <span class="error"></span>
+                            </div>
+                            
+                            <div class="field">
+                                <input name="login" type="text" placeholder="Numéro de Téléphone">
+                                <span class="error"></span>
+                            </div>
+                            
+                            <div class="field">
+                                    <select id="destinationd" name="arrivee">
+                                        <option value="default">Sexe</option>
+                                        <option>Femme</option>
+                                        <option>Homme</option>
+                                    </select>
+                            </div>
+                            
                             <div class="field">
                                 <input type="password" name="password" placeholder="Mot de passe">
                                 <span class="error"></span>
                             </div>
-
+                            
                             <div class="field">
                                 <input name="confirmPassword" type="password"  placeholder="Confirmer votre mot de passe">
                                 <span class="error"></span>
