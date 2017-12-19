@@ -26,20 +26,20 @@ public class MainServlet extends HttpServlet {
 	 * Fonction qui permet d'ajouter un nouveau utilisateur dans la base 
 	 */
 	private void signUpUtilisateur(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Récupération du mot de passe et de sa confirmation du formulaire d'inscription
+		
 		String password = (String) request.getParameter("password");
 		String confirm_password = (String) request.getParameter("confirmPassword");
-		// Si le mot de passe est sa confirmation sont égaux
 		if (password.equals(confirm_password)) {
-			// Récupération de la valeur du login du formulaire d'inscription
 			String login = (String) request.getParameter("login");
-			// Appel à la fonction de création d'un nouveau utilisateur de l'EJB
-			facade.ajouterUtilisateur(login, password);
-			// Redirection vers la jsp test pour confirmer la création 
+			String nom = (String) request.getParameter("nom");
+			String prenom = (String) request.getParameter("prenom");
+			String mail = (String) request.getParameter("password");
+			String telephone = (String) request.getParameter("prenom");
+			String sexe = (String) request.getParameter("password");
+			facade.ajouterUtilisateur(login, nom, prenom, password, mail, telephone, sexe);
 			request.getRequestDispatcher("WEB-INF/authentification.jsp").forward(request, response);
 		}
 		else {
-			// Si le mot de passe et sa confirmation ne sont pas égaux; affichage d'un message sur la console et on reste sur la page index.html
 			System.out.println("Les mots de passe entrés ne sont pas les mêmes !!");
 			request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		}	
@@ -81,6 +81,12 @@ public class MainServlet extends HttpServlet {
 		
     }
 	
+	private void afficherCompte(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
+		request.setAttribute("usr" , facade.findUtilisateur(login));
+		request.setAttribute("listeOffre", propositionTrajet.rechercherOffresProposees(login));
+		request.getRequestDispatcher("WEB-INF/compte.jsp").forward(request, response);
+		
+	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -126,6 +132,10 @@ public class MainServlet extends HttpServlet {
 					
 				case "submitRecherche" :
 					this.rechercherTrajet(request, response);
+					break;
+					
+				case "compte" : 
+					this.afficherCompte(request,response, currentLogin); 
 					break;
 					
 				default:

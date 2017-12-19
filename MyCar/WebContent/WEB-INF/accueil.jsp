@@ -99,7 +99,7 @@
                                                         <a href="http://localhost:8080/MyCar/MainServlet?todo=ajoutOffre">Ajouter un trajet</a>
                                                     </li>
                                                     <li>
-                                                        <a href="contact-page.html">Contact</a>
+                                                        <a href="http://localhost:8080/MyCar/MainServlet?todo=compte">Compte</a>
                                                     </li>
                                                 </ul>
 
