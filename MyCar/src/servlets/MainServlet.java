@@ -63,7 +63,9 @@ public class MainServlet extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/rides.jsp").forward(request, response);
 		}	
     }
-    
+	/* 
+	 * Fonction qui permet d'ajouter un trajet à la base 
+	 */
 	private void ajouterOffre(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
 		Utilisateur cond; 
 		String ref = (String) request.getParameter("ref");
@@ -82,7 +84,7 @@ public class MainServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-String todo=request.getParameter("todo");
+		String todo=request.getParameter("todo");
 		
 		String currentLogin= (String) request.getSession().getAttribute("login");
 		if(currentLogin == null) {
