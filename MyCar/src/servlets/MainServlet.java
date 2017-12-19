@@ -114,6 +114,10 @@ public class MainServlet extends HttpServlet {
 			else if ((todo != null)&&(todo.equals("signUp"))) {
 				this.signUpUtilisateur(request, response);
 			}
+			// Si l'utilisateur essaie de chercher un trajet 
+			else if ((todo != null)&&(todo.equals("submitRecherche"))) {
+				this.rechercherTrajet(request, response);
+			}
 			// Quand l'utilisateur arrive sur la page d'accueil du site 
 			else {
 				request.getRequestDispatcher("/WEB-INF/portail.jsp").forward(request, response);	

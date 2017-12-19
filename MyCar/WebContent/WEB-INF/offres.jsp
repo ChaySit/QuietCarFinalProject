@@ -111,7 +111,8 @@
                    <div class="col-md-8 col-sm-8 col-xs-12">
 
                      <div class="page-content">
-                      <c:if test= "${listeDesTrajet.size() != 0}"> 
+                      <c:choose>
+                      <c:when test= "${listeDesTrajet.size() != 0}"> 
 						<c:forEach items="${listeDesTrajet}" var="off">
                             <article class="single-article">
 
@@ -154,7 +155,6 @@
                                 </ul><!-- end .article-meta -->
 
                                  <div class="article-content">
-                                     Ici on peut ajouter un message posté par le conducteur pour expliquer ce qu'il veut ...
                                      ${off.message}
                                  </div>
                                  <BR>
@@ -164,10 +164,12 @@
                             	<BR>
                             </article>
                             </c:forEach>
-                          </c:if>
-                          <p > Aucun trajet ne correspont à votre recherche :( </p>
+                          </c:when>
+                          <c:otherwise>
+                          		<p > Aucun trajet ne correspont à votre recherche ! </p>
+                          </c:otherwise>
+                          </c:choose>
                         </div><!-- end .page-content -->
-
                     </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
                     
 
