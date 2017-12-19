@@ -92,10 +92,10 @@
                                             <nav id="nav" class="main-navigation">
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href=href="http://localhost:8085/MyCar/MainServlet">Accueil</a>
+                                                        <a href="http://localhost:8080/MyCar/MainServlet">Accueil</a>
                                                     </li>
                                                     <li>
-                                                        <a href="http://localhost:8085/MyCar/MainServlet?todo=rechercher">Rechercher un trajet</a>
+                                                        <a href="http://localhost:8080/MyCar/MainServlet?todo=rechercher">Rechercher un trajet</a>
                                                     </li>
                                                     <li>
                                                         <a href="add-ride.html">Ajouter un trajet</a>
@@ -143,7 +143,7 @@
                                     <li class="article-date">
                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
                                             <i class="fa fa-calendar"></i>
-                                            Le ${off.date} à ${off.heure}
+                                            Le ${off.date}
                                         </a>
                                     </li><!-- end .article-date -->
 

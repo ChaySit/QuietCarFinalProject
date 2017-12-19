@@ -11,14 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ejbs.Facade;
+import ejbs.TPropositionEJB;
 import entities.Offre;
+import entities.Utilisateur;
 
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	
 	@EJB
 	private Facade facade;
-	
+	@EJB
+	private TPropositionEJB propositionTrajet;
 	/* 
 	 * Fonction qui permet d'ajouter un nouveau utilisateur dans la base 
 	 */
@@ -61,44 +64,87 @@ public class MainServlet extends HttpServlet {
 		}	
     }
     
+	private void ajouterOffre(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
+		Utilisateur cond; 
+		String ref = (String) request.getParameter("ref");
+		String depart = (String) request.getParameter("depart");
+		String arrivee = (String) request.getParameter("arrivee");
+		String date = (String) request.getParameter("date");
+		String nbrPlace = (String) request.getParameter("nbr");
+		String vehicule = (String) request.getParameter("vehicule");
+		cond = propositionTrajet.recupererUtilisateur(login);
+		propositionTrajet.ajouterPropositionTrajet(ref, cond,depart, arrivee, date,vehicule, nbrPlace);			
+		request.getRequestDispatcher("WEB-INF/accueil.jsp").forward(request, response);
+			
+		
+    }
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String todo=request.getParameter("todo");
-
-		//On verifie si c'est le bon login et mdp
+String todo=request.getParameter("todo");
+		
 		String currentLogin= (String) request.getSession().getAttribute("login");
 		if(currentLogin == null) {
+			if((todo != null)&&(todo.equals("connect"))) {
+				
+				String login = request.getParameter("login");
+				String password = request.getParameter("password");
+				if(facade.utilisateurValide(login, password)) {
+					request.getSession().setAttribute("login", login);
+					request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
+				     
+				}
+				
+			}
+			
+			
+			
+		}else {
 			if(todo != null) {
 				switch(todo) {
-				case "connect" :
-					//test de connexion
-					String login = request.getParameter("login");
-					String password = request.getParameter("password");
-					if(facade.utilisateurValide(login, password)) {
-						request.getSession().setAttribute("login", login);
-						//Renvoi vers la page d'accueil 
-						request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
-					}
-					break;
+				
 				case "signUp" :
 					this.signUpUtilisateur(request, response);
 					break;
+					
+				case "ajoutOffre" :
+					
+					Utilisateur cond = propositionTrajet.recupererUtilisateur(currentLogin);
+					request.getRequestDispatcher("/WEB-INF/propositionTrajet.jsp").forward(request, response);
+					break;
+					
+				case "submitAjout" :
+					this.ajouterOffre(request, response, currentLogin);
+					break;	
+					
 				case "rechercher" :
 					request.getRequestDispatcher("/WEB-INF/rides.jsp").forward(request, response);
 					break;
+					
 				case "submitRecherche" :
 					this.rechercherTrajet(request, response);
 					break;
+					
 				default:
-					request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 					break;	
+				
+				}
+				
 			}
+			
+			else {
+				request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+				return;
+			}
+		
+			
 		}
+		
 		request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
 		return;
-			
-			
-	}
+		
 	}
 
 	

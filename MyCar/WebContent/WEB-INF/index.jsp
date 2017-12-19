@@ -95,13 +95,13 @@
 
                                                 <ul class="navigation">
                                                     <li>
-                                                        <a href=href="http://localhost:8085/MyCar/MainServlet">Accueil</a>
+                                                        <a href="http://localhost:8080/MyCar/MainServlet">Accueil</a>
                                                     </li>
                                                     <li>
-                                                        <a href="http://localhost:8085/MyCar/MainServlet?todo=rechercher" >Rechercher un trajet</a>
+                                                        <a href="http://localhost:8080/MyCar/MainServlet?todo=rechercher" >Rechercher un trajet</a>
                                                     </li>
                                                     <li>
-                                                        <a href="add-ride.html">Ajouter un trajet</a>
+                                                        <a href="http://localhost:8080/MyCar/MainServlet?todo=ajoutOffre">Ajouter un trajet</a>
                                                     </li>
                                                     <li>
                                                         <a href="contact-page.html">Contact</a>
