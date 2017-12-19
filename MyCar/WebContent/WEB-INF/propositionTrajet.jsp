@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
-<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
+<html class="not-ie no-js" lang="en">
     <head>
-
         <!-- Basic Page Needs -->
         <meta charset="utf-8">
-        <title>My ride - Add ride</title>
+        <title>Ajouter un trajet </title>
         <meta name="description" content="">
         <meta name="author" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,7 +81,7 @@
                                         <div class="col-md-4 col-sm-12 col-xs-12">
 
                                             <div class="logo">
-                                                <h1>My ride</h1>
+                                                <h1>QuietCar</h1>
                                             </div><!-- end .logo -->
 
                                         </div><!-- end .col-sm-4 -->
@@ -150,9 +147,9 @@
 
                             <form action="" novalidate autocomplete="off" class="idealforms add-ride">
                             
-                             <div class="field">
-                                     <input type="text" name="ref"/>
-                                </div> -->
+                                <div class="field">
+                                     <input type="text" name="ref" placeholder="Référence de l'annonce"/>
+                                </div>
 
                                 <div class="field">
                                     <select id="destination" name="depart">
@@ -224,90 +221,12 @@
 
         </section><!-- end .main-content -->
 
-
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div><!-- end .modal-header -->
-
-                    <div class="modal-body">
-                        <form action="" novalidate autocomplete="off" class="idealforms login">
-
-                            <div class="log-header">
-                                <span class="log-in">Log in</span>
-                            </div>
-
-                            <div class="field">
-                                <input name="username" type="text" placeholder="Username">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input type="password" name="password" placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field buttons">
-                                <button type="submit" class="submit btn green-color">Log in</button>
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </form><!-- end .login -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <%@include file="authentification.jsp" %>
         </div><!-- end .modal -->
 
         <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-
-                    <div class="modal-body">
-                        <form action="" novalidate autocomplete="off" class="idealforms reg">
-
-                            <div class="log-header">
-                                <span class="log-in">Sign up</span>
-                            </div>
-
-                            <div class="field">
-                                <input name="username" type="text" placeholder="Username">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input name="email" type="email"  placeholder="E-Mail">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input type="password" name="password" placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field">
-                                <input name="confirmpass" type="password"  placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-
-                            <div class="field buttons">
-                                <button type="submit" class="submit btn green-color">Sign up</button>
-                            </div>
-
-                            <div class="clearfix"></div>
-
-                        </form><!-- end .reg -->
-                    </div><!-- end .modal-body -->
-
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
+            <%@include file="inscription.jsp" %>
         </div><!-- end .modal -->
 
         <!-- Javascript -->

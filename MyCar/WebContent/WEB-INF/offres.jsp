@@ -127,7 +127,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-8 col-sm-8 col-xs-12">
 
                         <div class="page-content">
 						<c:forEach items="${listeDesTrajet}" var="off">
@@ -174,17 +174,23 @@
                                             Private Massage
                                         </a>
                                     </li>
+                                    
                                 </ul><!-- end .article-meta -->
 
-                                <div class="article-content">
+                                 <div class="article-content">
                                      Ici on peut ajouter un message posté par le conducteur pour expliquer ce qu'il veut ...
                                  </div>
-                                 
+                                 <BR>
+                                 <div class="field buttons">
+                                	<button type="submit" class="submit btn green-color" name="todo" value="reserver">Reserver</button>
+                            	 </div>
+                            	<BR>
                             </article>
                             </c:forEach>
                         </div><!-- end .page-content -->
 
                     </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                    
 
                 </div><!-- end .row -->
             </div><!-- end .container -->
