@@ -93,13 +93,21 @@ public class MainServlet extends HttpServlet {
 		request.getRequestDispatcher("WEB-INF/compte.jsp").forward(request, response);
 	}
 	
+	/*
+	 * Fonction qui permet la déconnexion d'un utilisateur 
+	 */
+	private void deconexion(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
+		login = null;
+		request.getRequestDispatcher("WEB-INF/portail.jsp").forward(request, response);
+	}
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String todo=request.getParameter("todo");
+		String todo = request.getParameter("todo");
 		
 		// Pour récupérer le login et les informations de l'utilisateur courant 
-		String currentLogin= (String) request.getSession().getAttribute("login");
+		String currentLogin = (String) request.getSession().getAttribute("login");
 				
 		// Si l'utilisateur n'est pas encore connecté 
 		if(currentLogin == null) {
@@ -152,6 +160,9 @@ public class MainServlet extends HttpServlet {
 						
 					case "compte" : 
 						this.afficherCompte(request,response, currentLogin); 
+						break;
+					case "deconnecter" : 
+						this.deconexion(request, response, currentLogin);
 						break;
 					default:
 						request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
