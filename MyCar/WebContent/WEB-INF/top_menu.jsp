@@ -18,8 +18,8 @@
                     </div>
                     
                     <div class="col-md-2 col-sm-2 col-xs-12">
-	                    <div action="" class="field buttons">
-	                         <button type="submit" class="submit btn green-color" name="todo" value="deconnecter">Déconnexion</button>
+	                    <div class="field buttons">
+	                    	 <a href="http://localhost:8080/MyCar/MainServlet?todo=deconnecter">  Déconnexion</a>
 	                    </div>
                     </div>
                     
