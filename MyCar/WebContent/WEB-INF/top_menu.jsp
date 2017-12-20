@@ -10,19 +10,16 @@
 		<div class="top-menu">
              <section class="container">
                  <div class="row">
-                 
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-	                    
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
+      
+                    <div class="col-md-10 col-sm-10 col-xs-12">
 	                    <div class="user-log">
 	                         Bonjour ${login} 
 	                    </div><!-- end .user-log -->
                     </div>
                     
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-	                    <div class="field buttons">
-	                         <button type="submit" class="submit btn green-color" name="todo" value="deconnect">Déconnexion</button>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+	                    <div action="" class="field buttons">
+	                         <button type="submit" class="submit btn green-color" name="todo" value="deconnecter">Déconnexion</button>
 	                    </div>
                     </div>
                     
