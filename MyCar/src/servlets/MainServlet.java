@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ejbs.Facade;
 import ejbs.TPropositionEJB;
+import ejbs.TReservationEJB;
 import entities.Offre;
 import entities.Utilisateur;
 
@@ -22,6 +23,8 @@ public class MainServlet extends HttpServlet {
 	private Facade facade;
 	@EJB
 	private TPropositionEJB propositionTrajet;
+	@EJB
+	private TReservationEJB reservationTrajet;
 	
 	/* 
 	 * Fonction qui permet d'ajouter un nouveau utilisateur dans la base 
@@ -85,6 +88,7 @@ public class MainServlet extends HttpServlet {
 	
 	private void afficherCompte(HttpServletRequest request, HttpServletResponse response, String login) throws ServletException, IOException {
 		request.setAttribute("usr" , facade.findUtilisateur(login));
+		request.setAttribute("listereservation", reservationTrajet.rechercheReservation(login));
 		request.setAttribute("listeOffre", propositionTrajet.rechercherOffresProposees(login));
 		request.getRequestDispatcher("WEB-INF/compte.jsp").forward(request, response);
 	}
@@ -141,6 +145,11 @@ public class MainServlet extends HttpServlet {
 					case "submitRecherche" :
 						this.rechercherTrajet(request, response);
 						break;
+						
+					/*case "reserver" :
+						this.rrequest, response);
+						break;*/
+						
 					case "compte" : 
 						this.afficherCompte(request,response, currentLogin); 
 						break;

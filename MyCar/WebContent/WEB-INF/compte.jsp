@@ -236,12 +236,12 @@
 						
                         <div class="page-content">
                         	<h2> Mes réservations </h2>
-						<c:forEach items="${listeOffre}" var="off">
+						<c:forEach items="${reservationTrajet}" var="off">
                             <article class="single-article">
 
                                 <header class="single-article-title">
-                                    <h2>De ${off.depart} à ${off.arrivee}</h2>
-                                    <span>Ce trajet est proposé par : <a href="#">${off.conducteur.login}</a></span>
+                                    <h2>De ${reservation.off.depart} à ${reservation.off.arrivee}</h2>
+                                    <span>Ce trajet est proposé par : <a href="#">${reservation.off.conducteur.login}</a></span>
                                 </header>
 
                                 <ul class="article-meta">
@@ -249,7 +249,7 @@
                                     <li class="article-date">
                                         <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
                                             <i class="fa fa-calendar"></i>
-                                            Le ${off.date}
+                                            Le ${reservation.off.date}
                                         </a>
                                     </li><!-- end .article-date -->
 
@@ -263,7 +263,7 @@
                                     <li>
                                         <a href="#" class="tooltip-link" data-original-title="Car" data-toggle="tooltip">
                                             <i class="fa fa-car"></i>
-                                            ${off.vehicule}
+                                            ${reservation.off.vehicule}
                                         </a>
                                     </li>
 
